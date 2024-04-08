@@ -27,6 +27,17 @@ const FormComponent = () => {
 	// text area
 	const textAreaElement = useRef(null);
 
+	// validation function
+	const validateForm = () => {
+		const clonedError = {...errors};
+
+		if(!userData.firstName.trim()) { // if empty
+			clonedError.firstNameError = 'First name is required!';
+		} else if(userData.firstName.length > 20) {
+			clonedError.firstNameError = 'Maximum characters allowed is 20!';
+		}
+	}
+
 	return (
 		<>
 		<form className={styles.contact_form}>
