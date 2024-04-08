@@ -59,6 +59,11 @@ const FormComponent = () => {
 			clonedError.subjectError = 'Maximum characters allowed is 20!';
 		}
 
+		if(!userData.message.trim()) { // if empty
+			clonedError.messageError = 'Message is required!';
+		} else if(userData.message.length > 300) {
+			clonedError.messageError = 'Maximum characters allowed is 300!';
+		}
 		
 	}
 
