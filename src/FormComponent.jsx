@@ -79,11 +79,14 @@ const FormComponent = () => {
 		}
 	}
 
-	
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		validateForm();
+	}
 
 	return (
 		<>
-		<form className={styles.contact_form}>
+		<form className={styles.contact_form} onSubmit={handleSubmit}>
 			<fieldset className={styles.contact_form_container}>
 				<legend>Contact us</legend>
 
