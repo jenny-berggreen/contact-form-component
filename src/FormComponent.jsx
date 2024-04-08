@@ -70,6 +70,8 @@ const FormComponent = () => {
 	const handleChange = (e) => {
 		const {name, value} = e.target; // access name and value
 
+		setErrors((prevErrors) => ({...prevErrors, [`${name}Error`]: ''}))
+
 		setUserData((prev) => ({...prev, [name]: value}));
 
 		if (name === 'message' && value.length >= 300) {
