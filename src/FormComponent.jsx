@@ -36,6 +36,18 @@ const FormComponent = () => {
 		} else if(userData.firstName.length > 20) {
 			clonedError.firstNameError = 'Maximum characters allowed is 20!';
 		}
+
+		if(!userData.lastName.trim()) { // if empty
+			clonedError.lastNameError = 'Last name is required!';
+		} else if(userData.lastName.length > 20) {
+			clonedError.lastNameError = 'Maximum characters allowed is 20!';
+		}
+
+		if(!userData.email.trim()) { // if empty
+			clonedError.emailError = 'E-mail is required!';
+		}
+
+		
 	}
 
 	return (
