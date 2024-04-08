@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './FormComponent.module.css'
 import appStyles from './App.module.css'
 
 const FormComponent = () => {
+
+	// user data object
+	const [userData, setUserData] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
+		phoneNumber: '',
+		subject: '',
+		message: ''
+	});
+
+	// errors object
+	const [errors, setErrors] = useState({
+		firstNameError: '',
+		lastNameError: '',
+		emailError: '',
+		phoneNumberError: '',
+		subjectError: '',
+		messageError: '',
+	});
+
+	// text area
+	const textAreaElement = useRef(null);
+
 	return (
 		<>
 		<form className={styles.contact_form}>
@@ -43,7 +67,14 @@ const FormComponent = () => {
 
 				<div className={styles.input_group}>
 					<label htmlFor="message">Message<sup>*</sup></label>
-					<textarea name="message" cols="30" rows="10" placeholder='Enter your message (max 300 characters)' className={styles.textarea_element}></textarea>
+					<textarea 
+						name="message" 
+						cols="30" 
+						rows="10" 
+						placeholder='Enter your message (max 300 characters)' 
+						className={styles.textarea_element}
+						ref={textAreaElement}
+					></textarea>
 					<div className={styles.message_error_and_count}>
 						<p>Message error</p>
 						<p>Message count</p>
