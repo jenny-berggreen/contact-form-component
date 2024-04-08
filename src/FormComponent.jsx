@@ -65,6 +65,7 @@ const FormComponent = () => {
 			clonedError.messageError = 'Maximum characters allowed is 300!';
 		}
 		
+		setErrors(clonedError); // update errors state
 	}
 
 	return (
