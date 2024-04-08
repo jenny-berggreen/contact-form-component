@@ -44,7 +44,7 @@ const FormComponent = () => {
 				<div className={styles.input_group}>
 					<label htmlFor="message">Message<sup>*</sup></label>
 					<textarea name="message" cols="30" rows="10" placeholder='Enter your message (max 300 characters)' className={styles.textarea_element}></textarea>
-					<div>
+					<div className={styles.message_error_and_count}>
 						<p>Message error</p>
 						<p>Message count</p>
 					</div>
