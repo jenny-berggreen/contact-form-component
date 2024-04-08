@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import styles from './App.module.css'
-import FormComponent from './FormComponent'
+import FormComponent from './FormComponent.jsx'
 
 function App() {
 
   return (
     <>
-      <FormComponent />
+      <div className={styles.main_container}>
+        <FormComponent />
+      </div>
+      
     </>
   )
 }

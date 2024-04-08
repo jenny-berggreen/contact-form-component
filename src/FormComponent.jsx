@@ -10,27 +10,27 @@ const FormComponent = () => {
 
 				<section>
 					<div>
-					<label htmlFor="firstName">First name<sup>*</sup></label>
-					<input type="text" name='firstName' placeholder='Enter your first name' />
-					<p>First name error</p>
+						<label htmlFor="firstName">First name<sup>*</sup></label>
+						<input type="text" name='firstName' placeholder='Enter your first name' />
+						<p>First name error</p>
 					</div>
 					<div>
-					<label htmlFor="lastName">Last name<sup>*</sup></label>
-					<input type="text" name='lastName' placeholder='Enter your last name' />
-					<p>Last name error</p>
+						<label htmlFor="lastName">Last name<sup>*</sup></label>
+						<input type="text" name='lastName' placeholder='Enter your last name' />
+						<p>Last name error</p>
 					</div>
 				</section>
 
 				<section>
 					<div>
-					<label htmlFor="email">E-mail<sup>*</sup></label>
-					<input type="email" name='email' placeholder='Enter your e-mail' />
-					<p>E-mail error</p>
+						<label htmlFor="email">E-mail<sup>*</sup></label>
+						<input type="email" name='email' placeholder='Enter your e-mail' />
+						<p>E-mail error</p>
 					</div>
 					<div>
-					<label htmlFor="phoneNumber">Phone number<sup>*</sup></label>
-					<input type="text" name='phoneNumber' placeholder='Enter your phone number' />
-					<p>Phone number error</p>
+						<label htmlFor="phoneNumber">Phone number<sup>*</sup></label>
+						<input type="text" name='phoneNumber' placeholder='Enter your phone number' />
+						<p>Phone number error</p>
 					</div>
 				</section>
 
@@ -44,8 +44,8 @@ const FormComponent = () => {
 					<label htmlFor="message">Message<sup>*</sup></label>
 					<textarea name="message" id="" cols="30" rows="10" placeholder='Enter your message (max 300 characters)'></textarea>
 					<div>
-					<p>Message error</p>
-					<p>Message count</p>
+						<p>Message error</p>
+						<p>Message count</p>
 					</div>
 				</div>
 
