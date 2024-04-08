@@ -47,7 +47,11 @@ const FormComponent = () => {
 			clonedError.emailError = 'E-mail is required!';
 		}
 
-		
+		if(!userData.subject.trim()) { // if empty
+			clonedError.subjectError = 'Subject is required!';
+		} else if(userData.subject.length > 20) {
+			clonedError.subjectError = 'Maximum characters allowed is 20!';
+		}
 	}
 
 	return (
