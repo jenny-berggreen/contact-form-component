@@ -4,6 +4,11 @@
   font-size: 1rem;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -17,3 +22,6 @@
 .flex-column {
   flex-direction: column;
 }
+
+/* form */
+
