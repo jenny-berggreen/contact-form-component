@@ -61,16 +61,14 @@ const FormComponent = () => {
 
 		if(!userData.message.trim()) { // if empty
 			clonedError.messageError = 'Message is required!';
-		} else if(userData.message.length > 300) {
-			clonedError.messageError = 'Maximum characters allowed is 300!';
-		}
+		} 
 		
 		setErrors(clonedError); // update errors state
 	}
 
 	// store data
 	const handleChange = (e) => {
-		const [name, value] = e.target; // access name and value
+		const {name, value} = e.target; // access name and value
 
 		setUserData((prev) => ({...prev, [name]: value}));
 
@@ -95,12 +93,12 @@ const FormComponent = () => {
 					<div className={styles.input_group}>
 						<label htmlFor="firstName">First name<sup>*</sup></label>
 						<input type="text" name='firstName' placeholder='Enter your first name' className={styles.input_element} onChange={handleChange} />
-						<p>First name error</p>
+						<p>{errors.firstNameError}</p>
 					</div>
 					<div className={styles.input_group}>
 						<label htmlFor="lastName">Last name<sup>*</sup></label>
 						<input type="text" name='lastName' placeholder='Enter your last name' className={styles.input_element} onChange={handleChange} />
-						<p>Last name error</p>
+						<p>{errors.lastNameError}</p>
 					</div>
 				</section>
 
@@ -108,19 +106,19 @@ const FormComponent = () => {
 					<div className={styles.input_group}>
 						<label htmlFor="email">E-mail<sup>*</sup></label>
 						<input type="email" name='email' placeholder='Enter your e-mail' className={styles.input_element} onChange={handleChange} />
-						<p>E-mail error</p>
+						<p>{errors.emailError}</p>
 					</div>
 					<div className={styles.input_group}>
 						<label htmlFor="phoneNumber">Phone number<sup>*</sup></label>
 						<input type="text" name='phoneNumber' placeholder='Enter your phone number' className={styles.input_element} onChange={handleChange} />
-						<p>Phone number error</p>
+						<p>{errors.phoneNumberError}</p>
 					</div>
 				</section>
 
 				<div className={styles.input_group}>
 					<label htmlFor="subject">Subject<sup>*</sup></label>
 					<input type="subject" name='subject' placeholder='Enter the subject (max 20 characters)' className={styles.input_element} onChange={handleChange} />
-					<p>Subject error</p>
+					<p>{errors.subjectError}</p>
 				</div>
 
 				<div className={styles.input_group}>
@@ -136,8 +134,8 @@ const FormComponent = () => {
 						onChange={handleChange}
 					></textarea>
 					<div className={styles.message_error_and_count}>
-						<p>Message error</p>
-						<p>Message count</p>
+						<p>{errors.messageError}</p>
+						<p>Message count: {textAreaElement.current ? textAreaElement.current.value.length : 0} / 300</p>
 					</div>
 				</div>
 
