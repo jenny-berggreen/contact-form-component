@@ -68,6 +68,19 @@ const FormComponent = () => {
 		setErrors(clonedError); // update errors state
 	}
 
+	// store data
+	const handleChange = (e) => {
+		const [name, value] = e.target; // access name and value
+
+		setUserData((prev) => ({...prev, [name]: value}));
+
+		if (name === 'message' && value.length >= 300) {
+			setErrors(prev => ({...prev, messageError: 'Maximum characters allowed is 300!'}));
+		}
+	}
+
+	
+
 	return (
 		<>
 		<form className={styles.contact_form}>
@@ -112,6 +125,7 @@ const FormComponent = () => {
 						name="message" 
 						cols="30" 
 						rows="10" 
+						maxLength={300}
 						placeholder='Enter your message (max 300 characters)' 
 						className={styles.textarea_element}
 						ref={textAreaElement}
